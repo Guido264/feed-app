@@ -1,0 +1,25 @@
+.comment {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #E3E2E2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 12px;
+    text-align: left;
+    color: white;
+  }
+  
+  .comment h2 {
+    font-size: 2rem;
+    color: #878686;
+  }
+  
+  .comment h3 {
+    color: #D291BC;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .comment p {
+    color: black;
+  }
+  
