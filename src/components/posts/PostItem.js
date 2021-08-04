@@ -1,20 +1,19 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 
-import { postActions } from "../../store/post";
 import classes from "./PostItem.module.css";
 
-const PostItem = (props) => {
-  const dispatch = useDispatch();
+const PostItem = ({ id, title, body }) => {
+  const history = useHistory();
 
   const onSelect = () => {
-    dispatch(postActions.selectedPost(props.id));
+    if (id) history.push(`/posts/${id}`);
   };
 
   return (
     <li className={classes.post} onClick={onSelect}>
-      <h2>{props.title}</h2>
-      <p>{props.body}</p>
+      <h2>{title}</h2>
+      <p>{body}</p>
     </li>
   );
 };

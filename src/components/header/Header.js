@@ -1,13 +1,22 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useLocation } from "react-router";
+
+import MainHeader from "./MainHeader";
 
 const Header = () => {
-  const selectedPost = useSelector((state) => state.posts.selectedPost);
-
+  const {pathname: currentPath} = useLocation();
+  let inPostPath = false;
+  if (currentPath === "/posts") {
+    inPostPath = true;
+  }
+ 
   return (
-    <h1 style={{ textAlign: "center" }}>
-      {selectedPost ? "COMMENTS" : "POSTS"}
-    </h1>
+    <header>
+      <h1 style={{ textAlign: "center" }}>
+        {inPostPath ? "POSTS" : "COMMENTS"}
+      </h1>
+      {!inPostPath && <MainHeader />}
+    </header>
   );
 };
 

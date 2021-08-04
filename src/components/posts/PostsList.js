@@ -11,10 +11,10 @@ const PostsList = () => {
     <ul className={classes["posts-list"]}>
       {posts.map((post) => (
         <PostItem
-          key={post.id}
           id={post.id}
           title={post.title}
           body={post.body}
+          key={post.id}
         />
       ))}
     </ul>

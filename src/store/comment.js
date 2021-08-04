@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialCommentState = {
   comments: [],
+  initialized: false,
 };
 
 const commentSlice = createSlice({
@@ -10,6 +11,7 @@ const commentSlice = createSlice({
   reducers: {
     comments(state, action) {
       state.comments = action.payload;
+      state.initialized = true;
     },
     newComment(state, action) {
       const id =

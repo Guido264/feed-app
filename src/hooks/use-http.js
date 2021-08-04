@@ -6,7 +6,7 @@ import { errorActions } from "../store/error";
 
 const useHttp = () => {
   const dispatch = useDispatch();
-
+  
   const sendRequests = useCallback(async (requestConfig, applyData) => {
     dispatch(loadingActions.loading(true));
     dispatch(errorActions.error(false));

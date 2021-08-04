@@ -10,11 +10,10 @@ import Card from "../UI/Card";
 
 import classes from "./CommentPost.module.css";
 
-const CommentPost = () => {
+const CommentPost = ({selectedPost}) => {
   const name = useSelector((state) => state.input.name);
   const email = useSelector((state) => state.input.email);
   const body = useSelector((state) => state.input.body);
-  const selectedPost = useSelector((state) => state.posts.selectedPost);
   const dispatch = useDispatch();
 
   const nameChangeHandler = (event) => {
@@ -28,7 +27,7 @@ const CommentPost = () => {
   const bodyChangeHandler = (event) => {
     dispatch(inputActions.body(event.target.value));
   };
-
+ 
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -40,6 +39,7 @@ const CommentPost = () => {
         body: body,
       })
     );
+    dispatch(inputActions.resetInput());
   };
 
   return (
