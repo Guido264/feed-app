@@ -29,6 +29,8 @@ npm run test
 
 The application initially displays the posts and allows the user to access to the comments related to the selected post.
 
+![posts-light](https://user-images.githubusercontent.com/67164680/129419773-a92da4e7-3531-4a11-b1da-21286f9ecaf5.png)
+
 
 
 
