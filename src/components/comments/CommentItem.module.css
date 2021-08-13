@@ -15,11 +15,12 @@
   
   .comment h3 {
     color: #D291BC;
-    margin: 0;
+    margin-top: 1rem;
     font-size: 1rem;
   }
 
   .comment p {
     color: black;
+    margin-top: 1rem;
   }
   

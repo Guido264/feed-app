@@ -25,6 +25,13 @@ npm run test
 
 👤 **Guido Stifani**
 
+## About the app
+
+The application initially displays the posts and allows the user to access to the comments related to the selected post.
+
+
+
+
 
 
 

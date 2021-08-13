@@ -3,11 +3,9 @@ import Button from "../UI/Button";
 
 const MainHeader = () => {
   return (
-    <nav style={{padding: "20px"}}>
-      <Link to="/posts" >
-        <Button>Back to Posts</Button>
-      </Link>
-    </nav>
+    <Link to="/posts">
+      <Button>Back to Posts</Button>
+    </Link>
   );
 };
 

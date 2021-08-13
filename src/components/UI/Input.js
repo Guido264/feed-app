@@ -2,17 +2,27 @@ import React from "react";
 
 import classes from "./Input.module.css";
 
-const Input = (props) => {
+const Input = ({
+  id,
+  label,
+  type,
+  required,
+  placeholder,
+  value,
+  onChange,
+  onBlur,
+}) => {
   return (
     <div className={classes.control}>
-      <label htmlFor={props.id}>{props.label}</label>
+      <label htmlFor={id}>{label}</label>
       <input
-        type={props.type}
-        id={props.id}
-        required={props.required}
-        value={props.value}
-        onChange={props.onChange}
-        onBlur={props.onBlur}
+        type={type}
+        id={id}
+        required={required}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
       />
     </div>
   );

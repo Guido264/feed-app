@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialCommentState = {
   comments: [],
-  initialized: false,
 };
 
 const commentSlice = createSlice({
@@ -11,9 +10,8 @@ const commentSlice = createSlice({
   reducers: {
     comments(state, action) {
       state.comments = action.payload;
-      state.initialized = true;
     },
-    newComment(state, action) {
+    newComments(state, action) {
       const id =
         state.comments.sort((a, b) => a.id - b.id)[state.comments.length - 1]
           .id + 1;

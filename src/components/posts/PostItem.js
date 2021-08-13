@@ -11,9 +11,9 @@ const PostItem = ({ id, title, body }) => {
   };
 
   return (
-    <li className={classes.post} onClick={onSelect}>
-      <h2>{title}</h2>
-      <p>{body}</p>
+    <li className={`${classes.post} dark:bg-gray-600`} onClick={onSelect}>
+      <h2 className="dark:text-purple-300">{title}</h2>
+      <p className="dark:text-gray-300">{body}</p>
     </li>
   );
 };

@@ -20,17 +20,25 @@ const Comments = () => {
   );
 
   if (error) {
-    return <p>{error}</p>;
+    return (
+      <p className="w-full z-10 text-8xl bg-gray-100 dark:bg-gray-800 dark:text-purple-300 text-purple-600 p-5">
+        {error}
+      </p>
+    );
   }
 
   if (!post) {
-    return <h1>Post Not found</h1>;
+    return (
+      <h1 className="w-full z-10 text-8xl bg-gray-100 dark:bg-gray-800 dark:text-purple-300 text-purple-600 p-5">
+        No posts found
+      </h1>
+    );
   }
 
   const { title, body } = post;
 
   return (
-    <Card className={classes["comments"]}>
+    <Card className={`${classes["comments"]} dark:bg-gray-800`}>
       <PostItem title={title} body={body} />
       <CommentsList selectedPost={selectedPost} />
       <CommentPost selectedPost={selectedPost} />

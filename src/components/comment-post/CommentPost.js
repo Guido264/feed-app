@@ -10,7 +10,7 @@ import Card from "../UI/Card";
 
 import classes from "./CommentPost.module.css";
 
-const CommentPost = ({selectedPost}) => {
+const CommentPost = ({ selectedPost }) => {
   const name = useSelector((state) => state.input.name);
   const email = useSelector((state) => state.input.email);
   const body = useSelector((state) => state.input.body);
@@ -27,12 +27,12 @@ const CommentPost = ({selectedPost}) => {
   const bodyChangeHandler = (event) => {
     dispatch(inputActions.body(event.target.value));
   };
- 
+
   const submitHandler = (event) => {
     event.preventDefault();
 
     dispatch(
-      commentActions.newComment({
+      commentActions.newComments({
         postId: selectedPost,
         name: name,
         email: email,
@@ -43,13 +43,14 @@ const CommentPost = ({selectedPost}) => {
   };
 
   return (
-    <Card className={classes["comment-post"]}>
+    <Card className={`${classes["comment-post"]} dark:bg-gray-600`}>
       <form onSubmit={submitHandler}>
         <Input
           id="name"
           label="Name"
           type="text"
           required
+          placeholder="Please add your name"
           value={name}
           onChange={nameChangeHandler}
         />
@@ -58,6 +59,7 @@ const CommentPost = ({selectedPost}) => {
           label="E-mail"
           type="email"
           required
+          placeholder="Please add your email"
           value={email}
           onChange={emailChangeHandler}
         />
@@ -66,6 +68,7 @@ const CommentPost = ({selectedPost}) => {
           label="Comment"
           type="text"
           required
+          placeholder="Please add a comment"
           value={body}
           onChange={bodyChangeHandler}
         />

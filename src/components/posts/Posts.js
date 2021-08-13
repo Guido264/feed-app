@@ -5,7 +5,6 @@ import PostsList from "./PostsList";
 
 const Posts = () => {
   const posts = useSelector((state) => state.posts.posts);
-  // const loading = useSelector((state) => state.loading.loading);
   const error = useSelector((state) => state.error.error);
   let content = <p>No posts found.</p>;
 
@@ -14,12 +13,12 @@ const Posts = () => {
   }
 
   if (error) {
-    content = <p>{error}</p>;
+    content = (
+      <p className="w-full z-10 text-8xl bg-gray-100 dark:bg-gray-800 dark:text-purple-300 text-purple-600 p-5">
+        {error}
+      </p>
+    );
   }
-
-  // if (loading) {
-  //   content = <p>Loading...</p>;
-  // }
 
   return <section>{content}</section>;
 };
